@@ -22,6 +22,9 @@ const CustomCssPref = Services.prefs.getIntPref("floorp.browser.tabbar.settings"
      Tag.setAttribute("id", "tabbardesgin");
      Tag.innerText = `@import url(chrome://browser/skin/customcss/verticaltab.css);`
      document.getElementsByTagName('head')[0].insertAdjacentElement('beforeend',Tag);
+     window.setTimeout(function(){
+     document.getElementById("titlebar").before(document.getElementById("toolbar-menubar"));
+     }, 2000);
    break;
 //tabs_on_bottom
  case 4:
@@ -53,6 +56,7 @@ const CustomCssPref = Services.prefs.getIntPref("floorp.browser.tabbar.settings"
     document.getElementById("tabbardesgin").remove();
     document.getElementById("tabbar-script").remove();
     document.getElementById("navigator-toolbox").insertBefore(document.getElementById("titlebar"), document.getElementById("navigator-toolbox").firstChild);
+    document.getElementById("TabsToolbar").before(document.getElementById("toolbar-menubar"));
    } catch(e) {
    }
 
@@ -77,6 +81,7 @@ const CustomCssPref = Services.prefs.getIntPref("floorp.browser.tabbar.settings"
         Tag.setAttribute("id", "tabbardesgin");
         Tag.innerText = `@import url(chrome://browser/skin/customcss/verticaltab.css);`
         document.getElementsByTagName('head')[0].insertAdjacentElement('beforeend',Tag);
+        document.getElementById("titlebar").before(document.getElementById("toolbar-menubar"));
       break;
    
    
